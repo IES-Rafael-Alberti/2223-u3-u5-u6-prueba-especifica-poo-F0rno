@@ -3,7 +3,8 @@ package es.edu.iesra.daw.pfp.examen
 import es.edu.iesra.daw.pfp.examen.dados.Dado
 
 class Jugador(private val nombre: String) {
-    var puntuacion = 0
+    var puntuacion = 1
+    var esGanador  = false
 
     fun tirarDado(dadoParaTirar: Dado): Int {
         return dadoParaTirar.leerCara()
