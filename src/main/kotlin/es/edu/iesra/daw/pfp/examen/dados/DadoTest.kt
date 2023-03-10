@@ -12,8 +12,8 @@ class DadoTest : DescribeSpec({
             miDado.leerCara().shouldBeBetween(1,3)
         }
         it("de 24 caras, las máximas") {
-            val miDado = Dado(24u)
-            miDado.leerCara().shouldBeBetween(1,24)
+            val miDado = Dado(20u)
+            miDado.leerCara().shouldBeBetween(1,20)
         }
         it("de 25 caras, mal") {
             shouldThrow<Exception> {

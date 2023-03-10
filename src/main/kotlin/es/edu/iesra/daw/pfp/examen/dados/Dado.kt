@@ -4,7 +4,7 @@ import kotlin.random.Random
 
 class Dado(private val caraMayor: UByte) {
     init {
-        require(caraMayor >= 3u && caraMayor <= 24u)
+        require(caraMayor >= 3u && caraMayor <= 20u)
     }
 
     fun leerCara() : Int {

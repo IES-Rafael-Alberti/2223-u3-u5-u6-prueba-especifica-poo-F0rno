@@ -14,7 +14,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation("org.jetbrains.dokka:dokka-gradle-plugin:1.8.10")
-    testImplementation("io.mockk:mockk:1.13.4")
+    implementation("io.mockk:mockk:1.13.4")
     implementation("io.kotest:kotest-runner-junit5-jvm:4.6.0")
     testImplementation(kotlin("test"))
     testImplementation("io.kotest:kotest-runner-junit5-jvm:5.5.4")
