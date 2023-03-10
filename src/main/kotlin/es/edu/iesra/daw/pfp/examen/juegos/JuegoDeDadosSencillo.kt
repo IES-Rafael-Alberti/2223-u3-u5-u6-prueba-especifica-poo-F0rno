@@ -4,14 +4,13 @@ import es.edu.iesra.daw.pfp.examen.Jugador
 import es.edu.iesra.daw.pfp.examen.dados.Dado
 
 class JuegoDeDadosSencillo(
-    val numeroDeJugadores: Int,
     var jugadores: List<Jugador>,
     val dados: List<Dado>,
     val numeroDeRondas: Int = 10
 ) : JuegoDeDados() {
 
     init {
-        require(numeroDeJugadores >= 2)
+        require(jugadores.size >= 2)
         require(numeroDeRondas > 0)
         require(dados.size == 3)
     }
