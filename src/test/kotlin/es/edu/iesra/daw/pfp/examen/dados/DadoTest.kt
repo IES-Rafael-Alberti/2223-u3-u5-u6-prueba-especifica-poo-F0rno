@@ -1,3 +1,5 @@
+package es.edu.iesra.daw.pfp.examen.dados
+
 import es.edu.iesra.daw.pfp.examen.dados.Dado
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.DescribeSpec
