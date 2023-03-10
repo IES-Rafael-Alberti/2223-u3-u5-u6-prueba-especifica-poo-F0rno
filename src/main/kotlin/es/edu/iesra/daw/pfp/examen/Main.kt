@@ -6,18 +6,19 @@ import es.edu.iesra.daw.pfp.examen.juegos.JuegoDeDados
 import es.edu.iesra.daw.pfp.examen.juegos.JuegoDeDadosChicago
 import es.edu.iesra.daw.pfp.examen.juegos.JuegoDeDadosSencillo
 
-fun configurarSencillo(tipoDeDado: Int, numeroDeJugadores: Int = 2) : JuegoDeDados {
+fun configurarSencillo(tipoDeDado: Int, numeroDeJugadores: Int, numeroDeRondas: Int) : JuegoDeDados {
     val jugadores = mutableListOf<Jugador>()
     val dados = mutableListOf<Dado>()
+    val numeroDeDados = 3
 
-    repeat(3) {
+    repeat(numeroDeDados) {
         dados.add(Dado(tipoDeDado.toUByte()))
     }
 
     repeat(numeroDeJugadores) {
         jugadores.add(Jugador(it.toString()))
     }
-    return JuegoDeDadosSencillo(jugadores, dados, 1000)
+    return JuegoDeDadosSencillo(jugadores, dados, numeroDeRondas)
 }
 
 fun configurarChicago(numeroDeJugadores: Int = 3) : JuegoDeDados {
@@ -45,7 +46,7 @@ fun banner(numeroDePartida: UByte, ganadores: List<Jugador>) {
 }
 
 fun main() {
-    val miJuegoSencillo = configurarSencillo(3, 100)
+    val miJuegoSencillo = configurarSencillo(3, 10, 10)
     miJuegoSencillo.empezarJuego()
     banner(1U, miJuegoSencillo.mostrarGanadores())
 

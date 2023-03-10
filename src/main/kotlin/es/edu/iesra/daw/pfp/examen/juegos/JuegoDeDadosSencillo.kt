@@ -4,9 +4,9 @@ import es.edu.iesra.daw.pfp.examen.Jugador
 import es.edu.iesra.daw.pfp.examen.dados.Dado
 
 class JuegoDeDadosSencillo(
-    var jugadores: List<Jugador>,
+    private var jugadores: List<Jugador>,
     val dados: List<Dado>,
-    val numeroDeRondas: Int = 10
+    private val numeroDeRondas: Int = 10
 ) : JuegoDeDados() {
 
     init {
@@ -15,7 +15,7 @@ class JuegoDeDadosSencillo(
         require(dados.size == 3)
     }
 
-    lateinit var ganador: List<Jugador>
+    private lateinit var ganador: List<Jugador>
 
     private fun sonTiradasIdenticas(tiradas: List<Int>) : Boolean {
         return tiradas.distinct().size == 1
