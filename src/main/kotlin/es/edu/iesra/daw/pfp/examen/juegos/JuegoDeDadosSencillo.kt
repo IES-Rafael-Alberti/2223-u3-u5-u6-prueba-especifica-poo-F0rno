@@ -44,7 +44,7 @@ class JuegoDeDadosSencillo(
         }
     }
 
-    override fun mostrarGanador(): List<Jugador> {
+    override fun mostrarGanadores(): List<Jugador> {
         return ganador
     }
 }

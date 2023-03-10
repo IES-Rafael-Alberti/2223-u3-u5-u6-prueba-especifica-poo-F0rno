@@ -28,7 +28,7 @@ class JuegoDeDadosSencilloTest : DescribeSpec({
             miJuego.empezarJuego().shouldBe(Unit)
         }
         it("nos devuelve los ganadores") {
-            miJuego.mostrarGanador().shouldBeInstanceOf<List<Jugador>>()
+            miJuego.mostrarGanadores().shouldBeInstanceOf<List<Jugador>>()
         }
     }
 })

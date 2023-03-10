@@ -34,19 +34,24 @@ fun configurarChicago(numeroDeJugadores: Int = 3) : JuegoDeDados {
     return JuegoDeDadosChicago(jugadores, dados)
 }
 
-fun main() {
-    val miJuegoSencillo = configurarSencillo(3, 10)
-    miJuegoSencillo.empezarJuego()
-
-    miJuegoSencillo.mostrarGanador().forEach { jugador ->
-        println(jugador)
+fun banner(numeroDePartida: UByte, ganadores: List<Jugador>) {
+    println("######### PARTIDA $numeroDePartida ###############################")
+    println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+    ganadores.forEach { jugador ->  
+        println("Ganador: Jugador ${jugador.nombre}")
+        println("Puntos: ${jugador.puntuacion}")
     }
+    println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+}
 
-    println("########################")
+fun main() {
+    val miJuegoSencillo = configurarSencillo(3, 100)
+    miJuegoSencillo.empezarJuego()
+    banner(1U, miJuegoSencillo.mostrarGanadores())
+
+    println()
 
     val miJuegoChicago = configurarChicago(10)
     miJuegoChicago.empezarJuego()
-    miJuegoChicago.mostrarGanador().forEach { ganador ->
-        println(ganador)
-    }
+    banner(2U, miJuegoChicago.mostrarGanadores())
 }

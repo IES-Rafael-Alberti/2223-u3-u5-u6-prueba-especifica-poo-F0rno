@@ -2,7 +2,7 @@ package es.edu.iesra.daw.pfp.examen
 
 import es.edu.iesra.daw.pfp.examen.dados.Dado
 
-class Jugador(private val nombre: String) {
+class Jugador(val nombre: String) {
     var puntuacion = 1
     var esGanador  = false
 

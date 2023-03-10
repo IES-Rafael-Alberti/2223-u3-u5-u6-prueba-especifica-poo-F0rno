@@ -36,7 +36,7 @@ class JuegoDeDadosChicago(
         ganadores = jugadoresConMaximaPuntuacion(jugadores)
     }
 
-    override fun mostrarGanador(): List<Jugador> {
+    override fun mostrarGanadores(): List<Jugador> {
         return ganadores
     }
 }
