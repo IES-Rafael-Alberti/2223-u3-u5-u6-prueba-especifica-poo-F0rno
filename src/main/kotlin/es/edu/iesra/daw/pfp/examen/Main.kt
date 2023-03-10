@@ -44,8 +44,9 @@ fun configurarChicago(numeroDeJugadores: Int = 3) : JuegoDeDados {
 /**
  * Imprime por terminal el resultado de un juego de dados
  */
-fun banner(numeroDePartida: UByte, ganadores: List<Jugador>) {
+fun banner(modoDeJuego: String, numeroDePartida: UByte, ganadores: List<Jugador>) {
     println("######### PARTIDA $numeroDePartida ###############################")
+    println(modoDeJuego)
     println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
     ganadores.forEach { jugador ->  
         println("Ganador: Jugador ${jugador.nombre}")
@@ -60,11 +61,11 @@ fun banner(numeroDePartida: UByte, ganadores: List<Jugador>) {
 fun main() {
     val miJuegoSencillo = configurarSencillo(3, 10, 10)
     miJuegoSencillo.empezarJuego()
-    banner(1U, miJuegoSencillo.mostrarGanadores())
+    banner("Sencillo", 1U, miJuegoSencillo.mostrarGanadores())
 
     println()
 
     val miJuegoChicago = configurarChicago(10)
     miJuegoChicago.empezarJuego()
-    banner(2U, miJuegoChicago.mostrarGanadores())
+    banner("Chicago", 2U, miJuegoChicago.mostrarGanadores())
 }
